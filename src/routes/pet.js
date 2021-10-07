@@ -2,7 +2,8 @@
 
 const express = require('express');
 
-const { Pet } = require('../models/index');
+// Importing Collection
+const petCollection  = require('../models/index').Pet;
 
 const router = express.Router();
 
@@ -15,33 +16,32 @@ router.delete('/pet/:id', deletePet);
 
 // Handlers 
 async function getPet(req, res) {
-  let allPets = await Pet.findAll();
+  let allPets = await petCollection.read();
   res.status(200).json(allPets);
 }
 
 async function getOnePet(req, res) {
-  const id = parseInt(req.params.id);
-  let pet = await Pet.findOne({ where: { id: id}});
+  const id = req.params.id;
+  let pet = await petCollection.read(id);
   res.status(200).json(pet);
 }
 
 async function createPet(req, res) {
-  let petData = req.body;
-  let pet = await Pet.create(petData);
+  let petObj = req.body;
+  let pet = await petCollection.create(petObj);
   res.status(200).json(pet);
 }
 
 async function updatePet(req, res) {
-  const id = parseInt(req.params.id);
-  const petData = req.body;
-  let pet = await Pet.findOne({ where: { id: id }});
-  let updatedPet = await pet.update(petData);
+  const id = req.params.id;
+  const petObj = req.body;
+  let updatedPet = await petCollection.update(id, petObj);
   res.status(200).json(updatedPet);
 }
 
 async function deletePet(req, res) {
   let id = parseInt(req.params.id);
-  let deletedPet = await Pet.destroy({ where: { id: id }});
+  let deletedPet = await petCollection.delete(id);
   res.status(200).json(deletedPet);
 }
 

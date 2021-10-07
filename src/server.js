@@ -6,8 +6,8 @@ const app = express();
 
 // Importing modules for use
 const mainRoute = require('./routes/mainRoute');
-const petsRouter = require('./routes/pets');
-const legendRouter = require('./routes/apexLegends')
+const petsRouter = require('./routes/pet');
+const legendRouter = require('./routes/apexLegend')
 const notFoundHandler = require('./error-handlers/404');
 const errorHandler = require('./error-handlers/500');
 const logger = require('./middleware/logger');

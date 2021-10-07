@@ -16,7 +16,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "sequelize db:create",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage"
   },
   "repository": {
     "type": "git",
