@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-// Importing Collection
+// Importing Collection from index
 const petCollection  = require('../models/index').Pet;
 
 const router = express.Router();

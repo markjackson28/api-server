@@ -1,6 +1,6 @@
 # api-server
 
-## Current LAB - 03
+## Current LAB - 04
 
 ## Data Modeling
 
@@ -36,6 +36,7 @@ Endpoints:
 
 ### UML
 <!-- > <img src="401lab03_UML.jpg" width="300"/> -->
+![Lab04 UML](401lab04_UML.jpg)
 
 ### Reflections and Comments
 * Start date (10/06)
@@ -46,8 +47,8 @@ Name of feature: Phase 3
 
 Estimate of time needed to complete: 8 Hours
 
-Start time: pm(10/)
+Start time: 4pm(10/06)
 
-Finish time: pm(10/)
+Finish time: 5pm(10/07)
 
-Actual time needed to complete: 
+Actual time needed to complete: 5 hours
